@@ -46,7 +46,7 @@ Start the application:
 sudo systemctl start pinboard-mark-read
 ```
 
-Check if the application started successfully (any potential error messages will be shown here – it should say "Active: active (running)"):
+Check if the application started successfully (any potential error messages will be shown here – it should say `Active: active (running)`):
 
 ```
 sudo systemctl status pinboard-mark-read
