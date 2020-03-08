@@ -14,7 +14,7 @@ Prerequisites:
 sudo apt-get install git python3 nginx pwgen
 ```
 
-Clone and set up a Python virtual environment:
+Clone this repository and set up a Python virtual environment:
 
 ```
 git clone https://github.com/christianhans/pinboard-mark-read.git
