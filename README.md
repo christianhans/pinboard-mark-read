@@ -2,9 +2,11 @@
 
 HTTP endpoint to mark Pinboard bookmarks as read.
 
-## Installation on Debian/Raspian 10.x
+Used by [pinboard-to-kindle](https://github.com/christianhans/pinboard-to-kindle) to allow the user to mark Pinboard bookmarks as read – directly from the delivered eBook.
 
 **Note**: It's strongly recommended to expose this application via HTTPS/SSL only. The HTTP endpoint requires a `?s=...` URL parameter which has to match `PINBOARD_MARK_READ_SECRET`. Serving this application over non-encrypted channels will expose `PINBOARD_MARK_READ_SECRET`. HTTP access log files will also expose `PINBOARD_MARK_READ_SECRET`, so keep those private as well.
+
+## Installation on Debian/Raspian 10.x
 
 Prerequisites:
 
