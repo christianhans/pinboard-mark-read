@@ -53,12 +53,14 @@ Adjust your nginx configuration to serve the application (adjust the file path i
 
 ```
 server {
-    listen 80;
-    server_name _;
+    ...
+    
     location / {
         include proxy_params;
         proxy_pass http://unix:/home/user/pinboard-mark-read/pinboard_mark_read.sock;
     }
+    
+    ...
 }
 ```
 
