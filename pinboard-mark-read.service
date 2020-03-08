@@ -1,21 +1,3 @@
-# Copy this file to /etc/system.d/system
-
-# sudo systemctl start pinboard-mark-read
-# sudo systemctl enable pinboard-mark-read
-# sudo systemctl status pinboard-mark-read
-# sudo systemctl restart nginx
-
-## Nginx configuration:
-# server {
-#     listen 80;
-#     server_name _;
-#
-#     location / {
-#         include proxy_params;
-#         proxy_pass http://unix:/home/user/pinboard-mark-read/pinboard_mark_read.sock;
-#     }
-# }
-
 [Unit]
 Description=Gunicorn instance to serve pinboard-mark-read
 After=network.target
