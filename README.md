@@ -11,7 +11,7 @@ Used by [pinboard-to-kindle](https://github.com/christianhans/pinboard-to-kindle
 Prerequisites:
 
 ```
-sudo apt-get install git python3 nginx
+sudo apt-get install git python3 nginx pwgen
 ```
 
 Clone and set up a Python virtual environment:
