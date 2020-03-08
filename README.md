@@ -48,3 +48,22 @@ In case the application runs properly enable it to start on system boot:
 ```
 sudo systemctl enable pinboard-mark-read
 ```
+
+Adjust your nginx configuration to serve the application (adjust the file path in line 6 accordingly):
+
+```
+server {
+    listen 80;
+    server_name _;
+    location / {
+        include proxy_params;
+        proxy_pass http://unix:/home/user/pinboard-mark-read/pinboard_mark_read.sock;
+    }
+}
+```
+
+Reload nginx:
+
+```
+sudo systemctl reload nginx
+```
