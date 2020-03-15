@@ -4,7 +4,7 @@ HTTP endpoint to mark Pinboard bookmarks as read.
 
 Used by [pinboard-to-kindle](https://github.com/christianhans/pinboard-to-kindle) to allow the user to mark Pinboard bookmarks as read – directly from the delivered eBook.
 
-**Note**: It's strongly recommended to expose this application via HTTPS/SSL only. The HTTP endpoint requires a `?s=...` URL parameter which has to match `PINBOARD_MARK_READ_SECRET`. Serving this application over non-encrypted channels will expose `PINBOARD_MARK_READ_SECRET`. Moreover, keep in mind that any HTTP access log files will also contain `PINBOARD_MARK_READ_SECRET`.
+**Note**: It's strongly recommended to expose this application via HTTPS/SSL only. The HTTP endpoint requires a `?h=...` URL parameter which has to match a hash value of `PINBOARD_MARK_READ_SECRET` concatenated with the requested URL. Serving this application over non-encrypted channels will expose those hashed values. Moreover, keep in mind that any HTTP access log files will also contain those hashed values.
 
 ## Installation on Debian/Raspian 10.x
 
@@ -25,7 +25,7 @@ python setup.py install
 deactivate
 ```
 
-Open `config.env` to set your Pinboard API token and choose a secret passphrase (e.g. via `pwgen 20`). Anyone with this passphrase will be able to mark your Pinboard bookmarks as read:
+Open `config.env` to set your Pinboard API token and choose a secret passphrase (e.g. via `pwgen 32`). Anyone with this passphrase will be able to mark your Pinboard bookmarks as read:
 
 ```
 PINBOARD_TOKEN="..."
