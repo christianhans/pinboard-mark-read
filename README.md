@@ -25,7 +25,7 @@ python setup.py install
 deactivate
 ```
 
-Open `config.env` to set your Pinboard API token and choose a secret passphrase (e.g. via `pwgen 32`). Anyone with this passphrase will be able to mark your Pinboard bookmarks as read:
+Open `config.env` to set your Pinboard API token and choose a secret passphrase (e.g. via `pwgen 32`):
 
 ```
 PINBOARD_TOKEN="..."
