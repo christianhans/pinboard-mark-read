@@ -4,7 +4,7 @@ HTTP endpoint to mark Pinboard bookmarks as read.
 
 Used by [pinboard-to-kindle](https://github.com/christianhans/pinboard-to-kindle) to allow the user to mark Pinboard bookmarks as read – directly from the delivered eBook.
 
-**Note**: It's strongly recommended to expose this application via HTTPS/SSL only. The HTTP endpoint requires a `?h=...` URL parameter which has to match a hash value of `PINBOARD_MARK_READ_SECRET` concatenated with the requested URL. Serving this application over non-encrypted channels will expose those hashed values and URLs marked as read. Moreover, keep in mind that any HTTP access log files will also contain those hashed values.
+**Note**: It's strongly recommended to expose this application via HTTPS/SSL only. The HTTP endpoint requires a `?h=...` URL parameter which has to match a hash value of `PINBOARD_MARK_READ_SECRET` concatenated with the requested URL. Serving this application over non-encrypted channels will expose those hashed values and URLs marked as read. Moreover, keep in mind that any HTTP access log files will also contain those hashed values and URLs.
 
 ## Installation on Debian/Raspian 10.x
 
