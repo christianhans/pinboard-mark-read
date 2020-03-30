@@ -66,7 +66,7 @@ server {
     
     location / {
         include proxy_params;
-        proxy_pass http://unix:/home/user/pinboard-mark-read/pinboard_mark_read.sock;
+        proxy_pass http://unix:/tmp/pinboard_mark_read.sock;
     }
     
     ...
