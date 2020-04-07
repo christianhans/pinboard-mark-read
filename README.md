@@ -10,13 +10,13 @@ Used by [pinboard-to-kindle](https://github.com/christianhans/pinboard-to-kindle
 
 Prerequisites:
 
-```
+```bash
 sudo apt-get install git python3 nginx pwgen
 ```
 
 Clone this repository and set up a Python virtual environment:
 
-```
+```bash
 git clone https://github.com/christianhans/pinboard-mark-read.git
 cd pinboard-mark-read
 python3 -m venv env
@@ -27,14 +27,14 @@ deactivate
 
 Open `config.env` to set your Pinboard API token and choose a secret passphrase (e.g. via `pwgen 32`):
 
-```
+```bash
 PINBOARD_TOKEN="..."
 PINBOARD_MARK_READ_SECRET="..."
 ```
 
 Set up a system service to run the application:
 
-```
+```bash
 sudo cp pinboard-mark-read.service /etc/systemd/system/pinboard-mark-read.service
 ```
 
@@ -42,25 +42,25 @@ Open `/etc/systemd/system/pinboard-mark-read.service` and adjust all file paths 
 
 Start the application:
 
-```
+```bash
 sudo systemctl start pinboard-mark-read
 ```
 
 Check if the application started successfully (any potential error messages will be shown here – it should say `Active: active (running)`):
 
-```
+```bash
 sudo systemctl status pinboard-mark-read
 ```
 
 In case the application runs properly enable it to start on system boot:
 
-```
+```bash
 sudo systemctl enable pinboard-mark-read
 ```
 
 Adjust your nginx configuration to serve the application (adjust the `proxy_pass` file path accordingly):
 
-```
+```nginx
 server {
     ...
     
@@ -75,6 +75,6 @@ server {
 
 Reload nginx:
 
-```
+```bash
 sudo systemctl reload nginx
 ```
