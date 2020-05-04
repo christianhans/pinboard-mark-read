@@ -1,5 +1,6 @@
 import os
 import hashlib
+from urllib.parse import unquote
 from pinboard import Pinboard
 from flask import Flask, request
 from flask_limiter import Limiter
@@ -19,7 +20,7 @@ def index():
 @app.route('/pb/mark/read')
 def mark_as_read():
     h = request.args.get('h')
-    url = request.args.get('url')
+    url = unquote(request.args.get('url'))
     if not h or not url:
         return '<h1>Error</h1>'
     if not validate_secret(h, url):
