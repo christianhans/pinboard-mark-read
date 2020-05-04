@@ -7,7 +7,7 @@ User=user
 Group=www-data
 WorkingDirectory=/home/user/pinboard-mark-read
 EnvironmentFile=/home/user/pinboard-mark-read/config.env
-ExecStart=/home/user/pinboard-mark-read/env/bin/gunicorn --workers 1 --bind unix:pinboard_mark_read.sock pinboard_mark_read.app:app
+ExecStart=/home/user/pinboard-mark-read/env/bin/gunicorn --workers 1 --bind unix:/tmp/pinboard_mark_read.sock pinboard_mark_read.app:app
 
 [Install]
 WantedBy=multi-user.target
