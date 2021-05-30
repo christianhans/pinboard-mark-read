@@ -25,8 +25,6 @@ python setup.py install
 deactivate
 ```
 
-> :information_source: **In case running setup.py results in an UnicodeDecodeError:** Try upgrading pip by running `pip install -U pip` inside the virtual environment.
-
 Open `config.env` to set your Pinboard API token and choose a secret passphrase (e.g. via `pwgen 32`):
 
 ```bash
